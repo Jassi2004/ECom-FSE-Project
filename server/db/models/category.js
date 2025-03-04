@@ -14,6 +14,10 @@ const Category = sequelize.define(
       unique: true,
       allowNull: false,
     },
+    createdByUserId: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
   },
   {
     timestamps: true,
