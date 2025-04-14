@@ -9,7 +9,10 @@ const OrderItem = sequelize.define(
       primaryKey: true,
       autoIncrement: true,
     },
-    orderId: {
+    orderTableId: {
+      type: DataTypes.INTEGER,
+    },
+    cartId: {
       type: DataTypes.INTEGER,
     },
     productId: {
@@ -17,10 +20,6 @@ const OrderItem = sequelize.define(
     },
     quantity: {
       type: DataTypes.INTEGER,
-      allowNull: false,
-    },
-    totalAmount: {
-      type: DataTypes.DECIMAL(10, 2),
       allowNull: false,
     },
   },

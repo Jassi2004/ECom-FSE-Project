@@ -12,7 +12,7 @@ const OrderTable = sequelize.define(
     userId: {
       type: DataTypes.INTEGER,
     },
-    totalAmount: {
+    totalPrice: {
       type: DataTypes.DECIMAL(10, 2),
       allowNull: false,
     },

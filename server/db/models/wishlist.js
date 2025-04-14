@@ -12,12 +12,9 @@ const Wishlist = sequelize.define(
     userId: {
       type: DataTypes.INTEGER,
     },
-    productId: {
-      type: DataTypes.INTEGER,
-    },
-    quantity: {
-      type: DataTypes.INTEGER,
-      defaultValue: 1,
+    productIds: {
+      type: DataTypes.ARRAY(DataTypes.INTEGER),
+      defaultValue: [],
     },
   },
   {

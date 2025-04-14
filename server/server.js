@@ -3,6 +3,12 @@ import express from "express";
 import cors from "cors";
 import User from "./db/models/user.js";
 import sequelize from "./db/config.js";
+import productRouter from "./routes/productRoutes.js";
+import categoryRouter from "./routes/categoryRoutes.js";
+import userRouter from "./routes/userRoutes.js";
+import cartRouter from "./routes/cartRoutes.js";
+import orderRouter from "./routes/orderRoutes.js";
+import wishlistRouter from "./routes/wishlistRoutes.js";
 
 // Initialize Express App
 const app = express();
@@ -29,6 +35,13 @@ app.use(express.json()); // Parse JSON requests
 app.get("/", async (req, res) => {
   res.send("Welcome to eCommerce API 🚀");
 });
+
+app.use("/api/products", productRouter);
+app.use("/api/categories", categoryRouter);
+app.use("/api/users", userRouter);
+app.use("/api/cart", cartRouter);
+app.use("/api/orders", orderRouter);
+app.use("/api/wishlist", wishlistRouter);
 
 // Start Server
 const PORT = process.env.PORT || 5000;
