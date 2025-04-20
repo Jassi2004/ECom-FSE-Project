@@ -3,12 +3,12 @@ import express from "express";
 import cors from "cors";
 import User from "./db/models/user.js";
 import sequelize from "./db/config.js";
-import productRouter from "./routes/productRoutes.js";
-import categoryRouter from "./routes/categoryRoutes.js";
-import userRouter from "./routes/userRoutes.js";
-import cartRouter from "./routes/cartRoutes.js";
-import orderRouter from "./routes/orderRoutes.js";
-import wishlistRouter from "./routes/wishlistRoutes.js";
+// import productRouter from "./routes/productRoutes.js";
+// import categoryRouter from "./routes/categoryRoutes.js";
+// import userRouter from "./routes/userRoutes.js";
+// import cartRouter from "./routes/cartRoutes.js";
+// import orderRouter from "./routes/orderRoutes.js";
+// import wishlistRouter from "./routes/wishlistRoutes.js";
 
 // Initialize Express App
 const app = express();
@@ -36,21 +36,21 @@ app.get("/", async (req, res) => {
   res.send("Welcome to eCommerce API 🚀");
 });
 
-app.use("/api/products", productRouter);
-app.use("/api/categories", categoryRouter);
-app.use("/api/users", userRouter);
-app.use("/api/cart", cartRouter);
-app.use("/api/orders", orderRouter);
-app.use("/api/wishlist", wishlistRouter);
+// app.use("/api/products", productRouter);
+// app.use("/api/categories", categoryRouter);
+// app.use("/api/users", userRouter);
+// app.use("/api/cart", cartRouter);
+// app.use("/api/orders", orderRouter);
+// app.use("/api/wishlist", wishlistRouter);
 
 // Start Server
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5001;
 app.listen(PORT, () => {
   console.log(`✅ Server running on port ${PORT}`);
 });
 
-// sequelize.sync({ force: true });
-sequelize.sync();
+sequelize.sync({ force: true });
+// sequelize.sync();
 
 // const jane = await User.create({
 //   userName: "test2",
@@ -59,5 +59,5 @@ sequelize.sync();
 // });
 // console.log("Jane's auto-generated ID:", jane.id);
 
-const users = await User.findAll();
-console.log("All users:", JSON.stringify(users, null, 2));
+// const users = await User.findAll();
+// console.log("All users:", JSON.stringify(users, null, 2));
